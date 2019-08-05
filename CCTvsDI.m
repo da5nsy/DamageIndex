@@ -26,10 +26,13 @@ key = {'LED Phosphor Real','LED Mixed Real','Fluorescent Broadband','Fluorescent
 % Other: (e.g., Equal-Energy, Clipped Incan, Ideal Prime Color)
 
 
-%%
+%% Plot all
+
 figure, hold on
 scatter(CCT,DI,'k','MarkerEdgeAlpha',0.2)
 plot([min(xlim),max(xlim)],[1,1],'k--')
+xlabel('CCT (K)')
+ylabel('DI (normalised to Illuminant A)')
 
 %%
 colours = jet(max(codes_from_excel_num));
@@ -46,4 +49,6 @@ end
 
 legend('AutoUpdate','off','Location','best')
 plot([min(xlim),max(xlim)],[1,1],'k--')
+xlabel('CCT (K)')
+ylabel('DI (normalised to Illuminant A)')
 
