@@ -12,8 +12,22 @@ load spd_houser.mat
 % http://dx.doi.org/10.1364/OE.21.010393"
 % - %
 
-DI = CalcDI(spd_houser,S_houser);
+% % Values of b for 5 categories of museum materials, from CIE 157 2004
+% Low grade paper:              0.038
+% Rag paper:                    0.0125
+% Oil paints on canvas:         0.0115
+% Textiles:                     0.01
+% Water colours on rag paper:   0.0115
+
+b = 0.0115;
+
+DI = CalcDI(spd_houser,S_houser,b);
 CCT = SPDToCCT(spd_houser,S_houser);
+
+% Illuminant A reference
+load spd_CIEA.mat spd_CIEA S_CIEA
+DI2 = CalcDI(spd_CIEA,S_CIEA,b);
+CCT2 = SPDToCCT(spd_CIEA,S_CIEA);
 
 %%
 % From personal communication with K Houser:
@@ -30,6 +44,7 @@ key = {'LED Phosphor Real','LED Mixed Real','Fluorescent Broadband','Fluorescent
 
 figure, hold on
 scatter(CCT,DI,'k','MarkerEdgeAlpha',0.2)
+scatter(CCT2,DI2,'k*','DisplayName','Illuminant A reference') 
 plot([min(xlim),max(xlim)],[1,1],'k--')
 xlabel('CCT (K)')
 ylabel('DI (normalised to Illuminant A)')
@@ -46,6 +61,8 @@ for i = 1:max(codes_from_excel_num)
         'DisplayName',key{i})
 end
 %scatter(CCT,DI,[],colours(codes_from_excel_num,:),'MarkerEdgeAlpha',0.5,'DisplayName',key{codes_from_excel_num})
+
+scatter(CCT2,DI2,'k*','DisplayName','Illuminant A reference') 
 
 legend('AutoUpdate','off','Location','best')
 plot([min(xlim),max(xlim)],[1,1],'k--')

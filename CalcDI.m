@@ -1,4 +1,4 @@
-function DI = CalcDI(SPD,S_SPD)
+function DI = CalcDI(SPD,S_SPD,b)
 
 % Function to calculate damage index, as defined by "CIE 157:2004 Control of damage to museum objects by optical radiation"
 % Currently required PsychToolbox for SToWls, T_CIE_Y2.mat, SplineCmf
@@ -6,8 +6,11 @@ function DI = CalcDI(SPD,S_SPD)
 %%
 
 % Set damage function
-b = 0.0115;
+if ~exist('b','var') % if b is not provided...
+    b = 0.0115; %default: `oil paints on canvas' and `Water colours on rag paper'
+end
 S_dm_rel = exp(-b*(SToWls(S_SPD)-300)); % eq 2.5 from CIE 157:2004
+%S_dm_rel = (1./SToWls(S_SPD)); %LM alternative version
 
 % Set photopic luminance function
 load T_CIE_Y2.mat T_CIE_Y2 S_CIE_Y2 %2 degree observer
