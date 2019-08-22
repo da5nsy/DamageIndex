@@ -4,8 +4,13 @@ load spd_houser.mat
 
 DI = CalcDI(spd_houser,S_houser);
 
-hist(log(DI),50)
-xlabel('log(DI)')
+%histogram(log(DI),50)
+%xlabel('log(DI)')
+
+histogram(DI,50)
+xlabel('DI')
+
+ylabel(['Count (n=',num2str(length(DI)),')'])
 
 
 

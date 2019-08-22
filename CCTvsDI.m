@@ -12,12 +12,14 @@ load spd_houser.mat
 % http://dx.doi.org/10.1364/OE.21.010393"
 % - %
 
-% % Values of b for 5 categories of museum materials, from CIE 157 2004
+% - % 
+% Values of b for 5 categories of museum materials, from CIE 157 2004
 % Low grade paper:              0.038
 % Rag paper:                    0.0125
 % Oil paints on canvas:         0.0115
 % Textiles:                     0.01
 % Water colours on rag paper:   0.0115
+% - %
 
 b = 0.0115;
 
