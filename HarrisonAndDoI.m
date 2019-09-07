@@ -24,7 +24,11 @@ plot(wavelength,DLambda,'-o','DisplayName','Harrison''s $\mathrm{D}_{\lambda}$')
 DoI_wavelength  = [546, 436, 405, 389, 365];
 DoI_data        = [1, 22, 60, 90, 135];
 
-plot(DoI_wavelength,DoI_data/100,'-o','DisplayName','Declaration of Indepedence data')
+plot(DoI_wavelength,DoI_data/100,'-o','DisplayName','DoI data')
 
 %%
 legend('Interpreter','latex')
+
+%%
+save2pdf('HarrisonAndDoI.pdf')
+
