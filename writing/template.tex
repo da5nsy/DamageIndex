@@ -14,28 +14,28 @@
 \usepackage{microtype}      % microtypography
 \usepackage{lipsum}		% Can be removed after putting your text content
 \usepackage{graphicx}
+\usepackage[round]{natbib}
+\bibliographystyle{abbrvnat}
 
 
 
-\title{A template for the \emph{arxiv} style}
+\title{A proposed rule of thumb for museum lighting: warmer lighting is less damaging}
 
 %\date{September 9, 1985}	% Here you can change the date presented in the paper title
 %\date{} 					% Or removing it
 
-\author{ \href{https://orcid.org/0000-0000-0000-0000}{\includegraphics[scale=0.06]{orcid.png}\hspace{1mm}David S.~Hippocampus}\thanks{Use footnote for providing further
-		information about author (webpage, alternative
-		address)---\emph{not} for acknowledging funding agencies.} \\
-	Department of Computer Science\\
-	Cranberry-Lemon University\\
-	Pittsburgh, PA 15213 \\
-	\texttt{hippo@cs.cranberry-lemon.edu} \\
+\author{ \href{https://orcid.org/0000-0002-4579-003X}{\includegraphics[scale=0.06]{orcid.png}\hspace{1mm}Daniel Garside}\thanks{Now at National Eye Institute, National Institutes of Health, Bethesda, MD USA - \texttt{danny.garside@nih.gov}}\\
+	Civil, Environmental and Geomatic Engineering\\
+	University College London\\
+	London, UK \\
+	\texttt{dannygarside@outlook.com} \\
 	%% examples of more authors
 	\And
-	\href{https://orcid.org/0000-0000-0000-0000}{\includegraphics[scale=0.06]{orcid.png}\hspace{1mm}Elias D.~Striatum} \\
-	Department of Electrical Engineering\\
-	Mount-Sheikh University\\
-	Santa Narimana, Levand \\
-	\texttt{stariate@ee.mount-sheikh.edu} \\
+	\href{https://orcid.org/0000-0001-7169-3359}{\includegraphics[scale=0.06]{orcid.png}\hspace{1mm}Katherine Curran} \\
+	Institute for Sustainable Heritage\\
+	University College London\\
+	London, UK \\
+	\texttt{k.curran@ucl.ac.uk} \\
 	%% \AND
 	%% Coauthor \\
 	%% Affiliation \\
@@ -64,10 +64,10 @@
 %%% Once the PDF is generated, you can check the metadata with
 %%% $ pdfinfo template.pdf
 \hypersetup{
-pdftitle={A template for the arxiv style},
+pdftitle={A proposed rule of thumb for museum lighting: warmer lighting is less damaging},
 pdfsubject={q-bio.NC, q-bio.QM},
-pdfauthor={David S.~Hippocampus, Elias D.~Striatum},
-pdfkeywords={First keyword, Second keyword, More},
+pdfauthor={Daniel Garside, Katherine Curran},
+pdfkeywords={Museum Lighting, Damage Index, Correlated Color Temperature},
 }
 
 \begin{document}
@@ -79,123 +79,129 @@ pdfkeywords={First keyword, Second keyword, More},
 
 
 % keywords can be removed
-\keywords{First keyword \and Second keyword \and More}
+\keywords{Museum Lighting \and Damage Index \and Correlated Color Temperature}
 
 
 \section{Introduction}
-\lipsum[2]
-\lipsum[3]
+In an ideal situation the spectral damage function for each material and each object would be obtained, and the spectrum of lighting would be modified such that damage by light was minimised for this specific set of objects. Where this is not done...
+
+Limits for light damage commonly followed in the museum lighting world (discussed by \cite{garside_how_2017}) are set in terms of lux, generally those of 50/150/200 lux set by \cite{thomson_museum_1978,thomson_museum_1986}, following \cite{loe_preferred_1982}. This guidance does not directly consider the spectrum of the illuminant, nor the spectral damage function of the object(s) under illumination. 
+
+Methods that consider both of these factors are available, but cost time and energy. These methods have been used effectively for high value objects. Where these methods are not used, it appears that there is a rule of thumb that, while falling short of the complex methods described above in terms of impact, might still represent a meaningful improvement over specifying just in terms of luminance for zero cost.
+
+In 2004 the CIE recommended a new method for calculating DI, using damage functions of x. It is clear that the most damage is done by wavelengths at the shorter-wavelength end of the visible spectrum. Lights with a bias in output towards these wavelengths appear blue, or in common lighting vocab 'cool' (as opposed to yellow/warm). In the original CIE doc they show projections for a small number of hypothetical illuminants. Here we extend this analysis to include a large number of real light sources, and show a robust relationship between colour temperature and damage index. The relationship is such that for every XK increase in color temperature DI doubles.
+
+There are two fundamental assumptions: the applicability of the damage functions, and the correctness/appropriateness of the luminance function. We briefly discuss the elements of both these assumptions and find X.
 
 
-\section{Headings: first level}
-\label{sec:headings}
+% \section{Headings: first level}
+% \label{sec:headings}
 
-\lipsum[4] See Section \ref{sec:headings}.
+% \lipsum[4] See Section \ref{sec:headings}.
 
-\subsection{Headings: second level}
-\lipsum[5]
-\begin{equation}
-	\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
-\end{equation}
+% \subsection{Headings: second level}
+% \lipsum[5]
+% \begin{equation}
+% 	\xi _{ij}(t)=P(x_{t}=i,x_{t+1}=j|y,v,w;\theta)= {\frac {\alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}{\sum _{i=1}^{N} \sum _{j=1}^{N} \alpha _{i}(t)a^{w_t}_{ij}\beta _{j}(t+1)b^{v_{t+1}}_{j}(y_{t+1})}}
+% \end{equation}
 
-\subsubsection{Headings: third level}
-\lipsum[6]
+% \subsubsection{Headings: third level}
+% \lipsum[6]
 
-\paragraph{Paragraph}
-\lipsum[7]
+% \paragraph{Paragraph}
+% \lipsum[7]
 
-\section{Examples of citations, figures, tables, references}
-\label{sec:others}
-\lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
+% \section{Examples of citations, figures, tables, references}
+% \label{sec:others}
+% \lipsum[8] \cite{kour2014real,kour2014fast} and see \cite{hadash2018estimate}.
 
-The documentation for \verb+natbib+ may be found at
-\begin{center}
-	\url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
-\end{center}
-Of note is the command \verb+\citet+, which produces citations
-appropriate for use in inline text.  For example,
-\begin{verbatim}
-   \citet{hasselmo} investigated\dots
-\end{verbatim}
-produces
-\begin{quote}
-	Hasselmo, et al.\ (1995) investigated\dots
-\end{quote}
+% The documentation for \verb+natbib+ may be found at
+% \begin{center}
+% 	\url{http://mirrors.ctan.org/macros/latex/contrib/natbib/natnotes.pdf}
+% \end{center}
+% Of note is the command \verb+\citet+, which produces citations
+% appropriate for use in inline text.  For example,
+% \begin{verbatim}
+%   \citet{hasselmo} investigated\dots
+% \end{verbatim}
+% produces
+% \begin{quote}
+% 	Hasselmo, et al.\ (1995) investigated\dots
+% \end{quote}
 
-\begin{center}
-	\url{https://www.ctan.org/pkg/booktabs}
-\end{center}
-
-
-\subsection{Figures}
-\lipsum[10]
-See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
-\lipsum[11]
-
-\begin{figure}
-	\centering
-	\fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
-	\caption{Sample figure caption.}
-	\label{fig:fig1}
-\end{figure}
-
-\subsection{Tables}
-\lipsum[12]
-See awesome Table~\ref{tab:table}.
-
-\begin{table}
-	\caption{Sample table title}
-	\centering
-	\begin{tabular}{lll}
-		\toprule
-		\multicolumn{2}{c}{Part}                   \\
-		\cmidrule(r){1-2}
-		Name     & Description     & Size ($\mu$m) \\
-		\midrule
-		Dendrite & Input terminal  & $\sim$100     \\
-		Axon     & Output terminal & $\sim$10      \\
-		Soma     & Cell body       & up to $10^6$  \\
-		\bottomrule
-	\end{tabular}
-	\label{tab:table}
-\end{table}
-
-\subsection{Lists}
-\begin{itemize}
-	\item Lorem ipsum dolor sit amet
-	\item consectetur adipiscing elit.
-	\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
-\end{itemize}
+% \begin{center}
+% 	\url{https://www.ctan.org/pkg/booktabs}
+% \end{center}
 
 
-\bibliographystyle{unsrt}
-%\bibliography{references}  %%% Remove comment to use the external .bib file (using bibtex).
+% \subsection{Figures}
+% \lipsum[10]
+% See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of the first footnote.}
+% \lipsum[11]
+
+% \begin{figure}
+% 	\centering
+% 	\fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+% 	\caption{Sample figure caption.}
+% 	\label{fig:fig1}
+% \end{figure}
+
+% \subsection{Tables}
+% \lipsum[12]
+% See awesome Table~\ref{tab:table}.
+
+% \begin{table}
+% 	\caption{Sample table title}
+% 	\centering
+% 	\begin{tabular}{lll}
+% 		\toprule
+% 		\multicolumn{2}{c}{Part}                   \\
+% 		\cmidrule(r){1-2}
+% 		Name     & Description     & Size ($\mu$m) \\
+% 		\midrule
+% 		Dendrite & Input terminal  & $\sim$100     \\
+% 		Axon     & Output terminal & $\sim$10      \\
+% 		Soma     & Cell body       & up to $10^6$  \\
+% 		\bottomrule
+% 	\end{tabular}
+% 	\label{tab:table}
+% \end{table}
+
+% \subsection{Lists}
+% \begin{itemize}
+% 	\item Lorem ipsum dolor sit amet
+% 	\item consectetur adipiscing elit.
+% 	\item Aliquam dignissim blandit est, in dictum tortor gravida eget. In ac rutrum magna.
+% \end{itemize}
+
+
+\bibliography{CCTvsDIrefs}  %%% Remove comment to use the external .bib file (using bibtex).
 %%% and comment out the ``thebibliography'' section.
 
 
 %%% Comment out this section when you \bibliography{references} is enabled.
-\begin{thebibliography}{1}
+% \begin{thebibliography}{1}
 
-	\bibitem{kour2014real}
-	George Kour and Raid Saabne.
-	\newblock Real-time segmentation of on-line handwritten arabic script.
-	\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
-			International Conference on}, pages 417--422. IEEE, 2014.
+% 	\bibitem{kour2014real}
+% 	George Kour and Raid Saabne.
+% 	\newblock Real-time segmentation of on-line handwritten arabic script.
+% 	\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
+% 			International Conference on}, pages 417--422. IEEE, 2014.
 
-	\bibitem{kour2014fast}
-	George Kour and Raid Saabne.
-	\newblock Fast classification of handwritten on-line arabic characters.
-	\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
-			International Conference of}, pages 312--318. IEEE, 2014.
+% 	\bibitem{kour2014fast}
+% 	George Kour and Raid Saabne.
+% 	\newblock Fast classification of handwritten on-line arabic characters.
+% 	\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
+% 			International Conference of}, pages 312--318. IEEE, 2014.
 
-	\bibitem{hadash2018estimate}
-	Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
-	Jacovi.
-	\newblock Estimate and replace: A novel approach to integrating deep neural
-	networks with existing applications.
-	\newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
+% 	\bibitem{hadash2018estimate}
+% 	Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
+% 	Jacovi.
+% 	\newblock Estimate and replace: A novel approach to integrating deep neural
+% 	networks with existing applications.
+% 	\newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
 
-\end{thebibliography}
+% \end{thebibliography}
 
 
 \end{document}
